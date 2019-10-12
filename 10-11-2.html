@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-11-2</title>
+	<style>
+		#small {
+			height: 60px;
+		}
+		#small img {
+			float: left;
+			width: 56px;
+			height: 56px;
+			cursor: pointer;
+			border: 2px solid white;
+		}
+		#small img.act {
+			border-color: red;
+		}
+		#pass {
+			position: absolute;
+		}
+		#passw {
+			float: left;
+		}
+		#eye1 {
+			float: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: none;
+			cursor: pointer;
+		}
+		#eye2 {
+			float: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: none;
+			cursor: pointer;
+		}
+		#eyenone {
+			float: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: block;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="show">
+		<div id="big">
+			<img src="images/4.jpg" alt="1" id="b" class="b">
+		</div>
+		<div id="small">
+			<img src="images/4.jpg" alt="1" id="s1" class="act">
+			<img src="images/3.jpg" alt="2" id="s2">
+			<img src="images/6.jpg" alt="3" id="s3">
+			<img src="images/7.jpg" alt="4" id="s4">
+			<img src="images/8.jpg" alt="5" id="s5">
+		</div>
+	</div>
+	<br><br>
+	<div id="pass">
+		<input type="password" id="passw" placeholder="密码" >
+		<div id='eye'>
+			<img src="images/eyenone.png" id="eye1" alt="眼睛闭">
+			<img src="images/eyesee.png" id="eye2" alt="眼睛睁">
+		</div>
+			<img src="images/eyenone.png" id="eyenone" alt="眼睛">
+	</div>
+	<script>
+		var b=document.getElementById('b');
+		var s1=document.getElementById('s1');
+		var s2=document.getElementById('s2');
+		var s3=document.getElementById('s3');
+		var s4=document.getElementById('s4');
+		var s5=document.getElementById('s5');
+		var passw=document.getElementById('passw')
+		var eyenone=document.getElementById('eyenone')
+		var eye1=document.getElementById('eye1')
+		var eye2=document.getElementById('eye2')
+		s1.onmouseover=function () {
+			b.src=this.src;
+			this.className='act';
+			s2.className='';
+			s3.className='';
+			s4.className='';
+			s5.className='';
+		}
+		s2.onmouseover=function () {
+			b.src=this.src;
+			this.className='act';
+			s1.className='';
+			s3.className='';
+			s4.className='';
+			s5.className='';
+		}
+		s3.onmouseover=function () {
+			b.src=this.src;
+			this.className='act';
+			s1.className='';
+			s2.className='';
+			s4.className='';
+			s5.className='';
+		}
+		s4.onmouseover=function () {
+			b.src=this.src;
+			this.className='act';
+			s1.className='';
+			s2.className='';
+			s3.className='';
+			s5.className='';
+		}
+		s5.onmouseover=function () {
+			b.src=this.src;
+			this.className='act';
+			s1.className='';
+			s2.className='';
+			s3.className='';
+			s4.className='';
+		}
+		eyenone.onclick=function () {
+			if(this.src==eye1.src){
+				this.src=eye2.src;
+				passw.type='text';
+			}else{
+				this.src=eye1.src;
+				passw.type='password';
+			}
+		}
+	</script>
+</body>
+</html>
