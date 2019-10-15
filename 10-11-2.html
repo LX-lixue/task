@@ -23,28 +23,11 @@
 		#passw {
 			float: left;
 		}
-		#eye1 {
+		#eye {
 			float: right;
 			position: absolute;
 			right: 0;
 			top: 0;
-			display: none;
-			cursor: pointer;
-		}
-		#eye2 {
-			float: right;
-			position: absolute;
-			right: 0;
-			top: 0;
-			display: none;
-			cursor: pointer;
-		}
-		#eyenone {
-			float: right;
-			position: absolute;
-			right: 0;
-			top: 0;
-			display: block;
 			cursor: pointer;
 		}
 	</style>
@@ -52,83 +35,46 @@
 <body>
 	<div id="show">
 		<div id="big">
-			<img src="images/4.jpg" alt="1" id="b" class="b">
+			<img src="images/4.jpg" alt="1" id="b">
 		</div>
 		<div id="small">
-			<img src="images/4.jpg" alt="1" id="s1" class="act">
-			<img src="images/3.jpg" alt="2" id="s2">
-			<img src="images/6.jpg" alt="3" id="s3">
-			<img src="images/7.jpg" alt="4" id="s4">
-			<img src="images/8.jpg" alt="5" id="s5">
+			<img src="images/4.jpg" alt="1" class="act">
+			<img src="images/3.jpg" alt="2">
+			<img src="images/6.jpg" alt="3">
+			<img src="images/7.jpg" alt="4">
+			<img src="images/8.jpg" alt="5">
 		</div>
 	</div>
 	<br><br>
 	<div id="pass">
-		<input type="password" id="passw" placeholder="密码" >
-		<div id='eye'>
-			<img src="images/eyenone.png" id="eye1" alt="眼睛闭">
-			<img src="images/eyesee.png" id="eye2" alt="眼睛睁">
-		</div>
-			<img src="images/eyenone.png" id="eyenone" alt="眼睛">
+		<input type="password" id="passw" placeholder="密码" value="">
+		<img src="images/eyenone.png" id="eye" alt="闭眼">
 	</div>
 	<script>
 		var b=document.getElementById('b');
-		var s1=document.getElementById('s1');
-		var s2=document.getElementById('s2');
-		var s3=document.getElementById('s3');
-		var s4=document.getElementById('s4');
-		var s5=document.getElementById('s5');
+		var s=document.getElementById('small');
+		var imgs=s.getElementsByTagName('img');
+		var imgslen=imgs.length;
 		var passw=document.getElementById('passw')
-		var eyenone=document.getElementById('eyenone')
-		var eye1=document.getElementById('eye1')
-		var eye2=document.getElementById('eye2')
-		s1.onmouseover=function () {
+		var eye=document.getElementById('eye')
+		for(var i=0;i<imgslen;i++){
+			imgs[i].onmouseover=function () {
 			b.src=this.src;
+			for(var i=0;i<imgslen;i++){
+				imgs[i].className='';
+			}
 			this.className='act';
-			s2.className='';
-			s3.className='';
-			s4.className='';
-			s5.className='';
+			}
 		}
-		s2.onmouseover=function () {
-			b.src=this.src;
-			this.className='act';
-			s1.className='';
-			s3.className='';
-			s4.className='';
-			s5.className='';
-		}
-		s3.onmouseover=function () {
-			b.src=this.src;
-			this.className='act';
-			s1.className='';
-			s2.className='';
-			s4.className='';
-			s5.className='';
-		}
-		s4.onmouseover=function () {
-			b.src=this.src;
-			this.className='act';
-			s1.className='';
-			s2.className='';
-			s3.className='';
-			s5.className='';
-		}
-		s5.onmouseover=function () {
-			b.src=this.src;
-			this.className='act';
-			s1.className='';
-			s2.className='';
-			s3.className='';
-			s4.className='';
-		}
-		eyenone.onclick=function () {
-			if(this.src==eye1.src){
-				this.src=eye2.src;
+		eye.onclick=function () {
+			if(passw.type=='password'){
 				passw.type='text';
+				this.src='images/eyesee.png';
+				this.alt='睁眼';
 			}else{
-				this.src=eye1.src;
 				passw.type='password';
+				this.src='images/eyenone.png';
+				this.alt='闭眼';
 			}
 		}
 	</script>
