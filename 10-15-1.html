@@ -4,13 +4,15 @@
 	<meta charset="UTF-8">
 	<title>10-15-1</title>
 	<style>
+		table, td {
+			border: 1px solid;
+		}
 		table {
-			width: 800px;
-			height: 300px;
 			border-collapse: collapse;
 		}
-		td{
-			border: 1px solid #000;
+		td {
+			padding: 5px;
+			width: 80px;
 		}
 	</style>
 </head>
@@ -20,15 +22,17 @@
 		for(var i=1;i<=9;i++){
 			document.write('<tr>');
 			for(var j=1;j<=9;j++){
+				document.write('<td>')
 				if(j<=i){
-				document.write('<td>'+j+'&times;'+i+'='+i*j+''+'</td>');
+				document.write(j+'&times;'+i+'='+i*j);
 				}else{
-				document.write("<td>"+"</td>")
+				document.write('&nbsp;')
 				}
+				document.write('</td>')
 			}
 		document.write('</tr>')
 		}
-		document.weite('<table>')
+		document.weite('</table>')
 	</script>
 </body>
 </html>
