@@ -14,7 +14,8 @@
 		// 练习1第二题
 		var a=1;
 		var b=2;
-		var c=String(a)+String(b);
+		// var c=String(a+b);
+		var c=a+''+b;
 		document.write(c);
 		document.write('<hr>');
 		// 练习2第一题
@@ -23,7 +24,7 @@
 		if(a>b){
 			document.write('a大于b');
 		}else{
-			if(a=b){
+			if(a==b){
 				document.write('a等于b');
 			}else{
 				document.write('a小于b');
@@ -48,11 +49,15 @@
 		}
 		document.write('<hr>');
 		// 练习2第五题
-		var a=10;
+		var a=15;
 		var b=12;
 		var c=17;
 		if(a>b){
-			document.write(a);
+			if(a>c){
+				document.write(a);
+			}else{
+				document.write(c);
+			}
 		}else{
 			if(b>c){
 				document.write(b);
