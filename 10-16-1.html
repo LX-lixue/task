@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-16-1</title>
+</head>
+<body>
+	<script>
+		// 练习1第一题
+		var a=10;
+		var b=5;
+		document.write(a>b?'a大于b':a<b?'a小于b':'a等于b');
+		document.write('<hr>');
+		// 练习1第二题
+		var a=1;
+		var b=2;
+		var c=String(a)+String(b);
+		document.write(c);
+		document.write('<hr>');
+		// 练习2第一题
+		var a=5;
+		var b=5;
+		if(a>b){
+			document.write('a大于b');
+		}else{
+			if(a=b){
+				document.write('a等于b');
+			}else{
+				document.write('a小于b');
+			}
+		}
+		document.write('<hr>');
+		// 练习2第二题
+		var a=10;
+		if(a%5){
+			document.write('不可以被5整除');
+		}else{
+			document.write('可以被5整除'+a/5);
+		}
+		document.write('<hr>');
+		// 练习2第四题
+		var x=7;
+		while(x<=100){
+			if(x%7==0){
+			document.write(x+' ');
+		}
+			x++;
+		}
+		document.write('<hr>');
+		// 练习2第五题
+		var a=10;
+		var b=12;
+		var c=17;
+		if(a>b){
+			document.write(a);
+		}else{
+			if(b>c){
+				document.write(b);
+			}else{
+				document.write(c);
+			}
+		}
+	</script>
+</body>
+</html>
