@@ -9,62 +9,96 @@
 		// 练习1第一题
 		var a=10;
 		var b=5;
-		document.write(a>b?'a大于b':a<b?'a小于b':'a等于b');
+		var c=a>b?'大':a<b?'小':'等';
+		document.write('a'+c+'于b');
 		document.write('<hr>');
 		// 练习1第二题
 		var a=1;
 		var b=2;
-		// var c=String(a+b);
-		var c=a+''+b;
+		// var c=[a]+[b];
+		// var c=String(a)+String(b);
+		var c=''+a+b;
 		document.write(c);
 		document.write('<hr>');
 		// 练习2第一题
 		var a=5;
 		var b=5;
+		var c='';
+		// if(a>b){
+		// 	c='大';
+		// }else{
+		// 	if(a==b){
+		// 		c='等';
+		// 	}else{
+		// 		c='小';
+		// 	}
+		// }
 		if(a>b){
-			document.write('a大于b');
+			c='大';
+		}else if(a<b){
+			c='小';
 		}else{
-			if(a==b){
-				document.write('a等于b');
-			}else{
-				document.write('a小于b');
-			}
+			c='等';
 		}
+		document.write('a'+c+'于b')
 		document.write('<hr>');
 		// 练习2第二题
 		var a=10;
+		var b='';
+		var c='';
 		if(a%5){
-			document.write('不可以被5整除');
+			// document.write('不可以被5整除');
+			c='不';
 		}else{
-			document.write('可以被5整除'+a/5);
+			// document.write('可以被5整除,结果是'+a/5);
+			b=',结果是'+a/5;
 		}
+		document.write(c+'可以被5整除'+b);
 		document.write('<hr>');
 		// 练习2第四题
-		var x=7;
-		while(x<=100){
-			if(x%7==0){
-			document.write(x+' ');
-		}
+		// var x=7;
+		// while(x<100){
+		// 	document.write(x+' ');
+		// 	x+=7;
+		// }
+		var x=1;
+		while(x<15){
+			document.write(x*7+' ');
 			x++;
 		}
 		document.write('<hr>');
 		// 练习2第五题
 		var a=15;
-		var b=12;
+		var b=22;
 		var c=17;
-		if(a>b){
-			if(a>c){
-				document.write(a);
-			}else{
-				document.write(c);
-			}
-		}else{
-			if(b>c){
-				document.write(b);
-			}else{
-				document.write(c);
-			}
+		var max=a;
+		if(b>max){
+			max=b;
 		}
+		if(c>max){
+			max=c;
+		}
+		document.write(max);
+		// if(a>b){
+		// 	if(a>c){
+		// 		document.write(a);
+		// 	}else{
+		// 		document.write(c);
+		// 	}
+		// }else{
+		// 	if(b>c){
+		// 		document.write(b);
+		// 	}else{
+		// 		document.write(c);
+		// 	}
+		// }
+		// if(a>b && a>c){
+		// 	document.write(a);
+		// }else if(b>a && b>c){
+		// 	document.write(b);
+		// }else{
+		// 	document.write(c);
+		// }
 	</script>
 </body>
 </html>
