@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-18-1</title>
+</head>
+<body>
+	<input type="text" id="ia" value="">
+	<select name="" id="fh">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" id="ib" value="">
+	<input type="button" id="deng" value="=">
+	<input type="text" id="ic">
+	<script>
+		var ys=document.getElementById('deng');
+		ys.onclick=function(){
+			var a=parseInt(document.getElementById('ia').value);
+			var fh=document.getElementById('fh').value;
+			var b=parseInt(document.getElementById('ib').value);
+			var jg;
+		    if(fh=='+'){
+		    	jg= a+b;
+		    }else if(fh=='-'){
+		    	jg= a-b;
+		    }else if(fh=='*'){
+		    	jg= a*b;
+		    }else if(fh=='/' && b!=0){
+		    	jg= a/b;
+			}else{
+		    	jg='除数不能为0';
+		    }
+		    if(isNaN(a)||isNaN(b)){
+		   	jg='输入错误';
+		   }
+    document.getElementById("ic").value =jg;
+  }
+		document.write('<hr>')
+		function test() {
+			var args=[];
+			for(var i=0;i<arguments.length;i++){
+				args.push(arguments[i]);
+				g=g+arguments[i];
+			}
+			return args.reverse().join('+');
+		}
+		var g=0;
+		document.write(test(1,2,3,4,5,6,7,8,9)+'='+g);
+		document.write('<br>');
+		g=g-g;
+		document.write(test(3,6,9,1,4,7)+'='+g);
+		document.write('<br>');
+		g=g-g;
+		document.write(test(1)+'='+g);
+	</script>
+</body>
+</html>
