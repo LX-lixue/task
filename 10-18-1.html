@@ -5,56 +5,72 @@
 	<title>10-18-1</title>
 </head>
 <body>
-	<input type="text" id="ia" value="">
-	<select name="" id="fh">
+	<input type="text" value="">
+	<select name="">
 		<option value="+">+</option>
 		<option value="-">-</option>
 		<option value="*">*</option>
 		<option value="/">/</option>
 	</select>
-	<input type="text" id="ib" value="">
-	<input type="button" id="deng" value="=">
-	<input type="text" id="ic">
+	<input type="text" value="">
+	<input type="button" value=" = ">
+	<input type="text">
 	<script>
-		var ys=document.getElementById('deng');
-		ys.onclick=function(){
-			var a=parseInt(document.getElementById('ia').value);
-			var fh=document.getElementById('fh').value;
-			var b=parseInt(document.getElementById('ib').value);
-			var jg;
-		    if(fh=='+'){
-		    	jg= a+b;
-		    }else if(fh=='-'){
-		    	jg= a-b;
-		    }else if(fh=='*'){
-		    	jg= a*b;
-		    }else if(fh=='/' && b!=0){
-		    	jg= a/b;
+		var inputs=document.getElementsByTagName('input');
+		var sel=document.getElementsByTagName('select')[0];
+		var a=inputs[0]; // 第一个输入框
+		var b=inputs[1]; // 第二个输入框
+		var btn=inputs[2]; // 等号
+		var c=inputs[3]; // 第三个输入框
+		btn.onclick=function () {
+			c.value=''; // 清空页面
+			var vala=a.value;
+			var valb=b.value;
+			if(vala!='' && b.valb!=''){
+				if(!isNaN(vala) && !isNaN(valb)){
+					// 选择的是哪个运算符，执行相应操作
+					var op=sel.value;
+					var numa=vala*1; // 转数字
+					var numb=valb*1; // 转数字
+					if(op=='+'){
+						c.value=numa+numb;
+					}else if(op=='-'){
+						c.value=numa-numb;
+					}else if(op=='*'){
+						c.value=numa*numb;
+					}else if(op=='/'){
+						if(numb!=0){
+							c.value=numa/numb;
+						}else{
+							c.value='除数不能为0';
+						}
+					}
+				}else{
+					c.value='前或后输入框不是数字';
+				}
 			}else{
-		    	jg='除数不能为0';
-		    }
-		    if(isNaN(a)||isNaN(b)){
-		   	jg='输入错误';
-		   }
-    document.getElementById("ic").value =jg;
-  }
+				c.value='第一个或第二个输入框为空';
+			}
+		}
+
 		document.write('<hr>')
 		function test() {
-			var args=[];
-			for(var i=0;i<arguments.length;i++){
-				args.push(arguments[i]);
-				g=g+arguments[i];
+			var arr=[];
+			var sum=0;
+			for(var i=0;i<arguments.length;i++) {
+				// arr.push(arguments[i]);
+				arr.unshift(arguments[i]); // 倒序输出
+				sum+=arguments[i];
 			}
-			return args.reverse().join('+');
+			// var str=arr.reverse().join('+'); // 反向输出
+			var str=arr.join('+');
+			return str+'='+sum;
 		}
-		var g=0;
-		document.write(test(1,2,3,4,5,6,7,8,9)+'='+g);
+		document.write(test(1,2,3,4,5,6,7,8,9));
 		document.write('<br>');
-		g=g-g;
-		document.write(test(3,6,9,1,4,7)+'='+g);
+		document.write(test(3,6,9,1,4,7));
 		document.write('<br>');
-		g=g-g;
-		document.write(test(1)+'='+g);
+		document.write(test(1));
 	</script>
 </body>
 </html>
